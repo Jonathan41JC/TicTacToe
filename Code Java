@@ -1,0 +1,161 @@
+import java.util.*;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        String blue="\u001B[31m";
+        String red="\u001B[34m";
+        String reset ="\u001B[0m";
+        String[][] board= {{"-","-","-"},{"-","-","-"},{"-","-","-"}};
+        Scanner scanner= new Scanner(System.in);
+        int playerRow=0;
+        int playerCol=0;
+        int computerRow=0;
+        int computerCol=0;
+        for(int i=0;i<9;i++)
+        {
+            System.out.println("Give your moves!, row and col number 0-2");
+            playerRow=scanner.nextInt();
+            playerCol=scanner.nextInt();
+            while(playerRow>=3)
+            {
+                System.out.println("Invalid Row, Try Again!");
+                playerRow=scanner.nextInt();
+            }
+            while(playerCol>=3)
+            {
+                System.out.println("Invalid Col, Try Again!");
+                playerCol=scanner.nextInt();
+            }
+            while(board[playerRow][playerCol].equals(red+"X"+reset)||board[playerRow][playerCol].equals(blue+"O"+reset))
+            {
+                System.out.println("Space Already Occupied, Try Again!");
+                playerRow=scanner.nextInt();
+                playerCol=scanner.nextInt();
+                
+            }
+            board[playerRow][playerCol]=red+"X"+reset;
+            for(int r=0;r<board.length;r++)
+            {
+                for(int c=0;c<board[0].length;c++)
+                {
+                    System.out.print(board[r][c]);
+                }
+                System.out.println();
+            }
+            if(board[0][0].equals(red+"X"+reset)&&board[0][1].equals(red+"X"+reset)&&board[0][2].equals(red+"X"+reset))
+            {
+                i=1000;
+                System.out.println("The Player Won!!");
+            }
+            else if(board[1][0].equals(red+"X"+reset)&&board[1][1].equals(red+"X"+reset)&&board[1][2].equals(red+"X"+reset))
+            {
+                i=1000;
+                System.out.println("The Player Won!!");
+            }
+            else if(board[2][0].equals(red+"X"+reset)&&board[2][1].equals(red+"X"+reset)&&board[2][2].equals(red+"X"+reset))
+            {
+                i=1000;
+                System.out.println("The Player Won!!");
+            }
+            else if(board[0][0].equals(red+"X"+reset)&&board[1][0].equals(red+"X"+reset)&&board[2][0].equals(red+"X"+reset))
+            {
+                i=1000;
+                System.out.println("The Player Won!!");
+            }
+            else if(board[0][1].equals(red+"X"+reset)&&board[1][1].equals(red+"X"+reset)&&board[2][1].equals(red+"X"+reset))
+            {
+                i=1000;
+                System.out.println("The Player Won!!");
+            }
+            else if(board[0][2].equals(red+"X"+reset)&&board[1][2].equals(red+"X"+reset)&&board[2][2].equals(red+"X"+reset))
+            {
+                i=1000;
+                System.out.println("The Player Won!!");
+            }
+            else if(board[0][0].equals(red+"X"+reset)&&board[1][1].equals(red+"X"+reset)&&board[2][2].equals(red+"X"+reset))
+            {
+                i=1000;
+                System.out.println("The Player Won!!");
+            }
+            else if(board[0][2].equals(red+"X"+reset)&&board[1][1].equals(red+"X"+reset)&&board[2][0].equals(red+"X"+reset))
+            {
+                i=1000;
+                System.out.println("The Player Won!!");
+            }
+            else
+            {
+                System.out.println();
+            }
+            System.out.println("Computer move!");
+            computerRow=(int)(Math.random()*(3));
+            computerCol=(int)(Math.random()*(3));
+            while(board[computerRow][computerCol].equals(red+"X"+reset)||board[computerRow][computerCol].equals(blue+"O"+reset))
+            {
+                computerRow=(int)(Math.random()*(3));
+                computerCol=(int)(Math.random()*(3));
+            }
+            
+            board[computerRow][computerCol]=blue+"O"+reset;
+            for(int r=0;r<board.length;r++)
+            {
+                for(int c=0;c<board[0].length;c++)
+                {
+                    System.out.print(board[r][c]);
+                }
+                System.out.println();
+            }   
+            if(board[0][0].equals(blue+"O"+reset)&&board[0][1].equals(blue+"O"+reset)&&board[0][2].equals(blue+"O"+reset))
+            {
+                i=1000;
+                System.out.println("The Computer Won!!");
+            }
+            else if(board[1][0].equals(blue+"O"+reset)&&board[1][1].equals(blue+"O"+reset)&&board[1][2].equals(blue+"O"+reset))
+            {
+                i=1000;
+                System.out.println("The Computer Won!!");
+            }
+            else if(board[2][0].equals(blue+"O"+reset)&&board[2][1].equals(blue+"O"+reset)&&board[2][2].equals(blue+"O"+reset))
+            {
+                i=1000;
+                System.out.println("The Computer Won!!");
+            }
+            else if(board[0][0].equals(blue+"O"+reset)&&board[1][0].equals(blue+"O"+reset)&&board[2][0].equals(blue+"O"+reset))
+            {
+                i=1000;
+                System.out.println("The Computer Won!!");
+            }
+            else if(board[0][1].equals(blue+"O"+reset)&&board[1][1].equals(blue+"O"+reset)&&board[2][1].equals(blue+"O"+reset))
+            {
+                i=1000;
+                System.out.println("The Computer Won!!");
+            }
+            else if(board[0][2].equals(blue+"O"+reset)&&board[1][2].equals(blue+"O"+reset)&&board[2][2].equals(blue+"O"+reset))
+            {
+                i=1000;
+                System.out.println("The Computer Won!!");
+            }
+            else if(board[0][0].equals(blue+"O"+reset)&&board[1][1].equals(blue+"O"+reset)&&board[2][2].equals(blue+"O"+reset))
+            {
+                i=1000;
+                System.out.println("The Computer Won!!");
+            }
+            else if(board[0][2].equals(blue+"O"+reset)&&board[1][1].equals(blue+"O"+reset)&&board[2][0].equals(blue+"O"+reset))
+            {
+                i=1000;
+                System.out.println("The Computer Won!!");
+            }
+            else
+            {
+                System.out.println();
+            }
+        
+ 
+        }
+        
+        
+        
+        
+    }
+    
+}
